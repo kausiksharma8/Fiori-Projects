@@ -1,0 +1,65 @@
+{
+    "empStr": {
+        "empid": "",
+        "empName": "",
+        "sal": "",
+        "currency": "",
+        "smoker":false,
+        "mStat":"",
+        "gender":""
+    },
+    "empCurrency":[
+        {
+            "currency":"USD"
+        },
+        {
+            "currency":"EUR"
+        },
+        {
+            "currency":"RS"
+        },
+        
+        {
+            "currency":"JPY"
+        }
+        
+],
+    "empTab": [
+        {
+            "empid": "1001",
+            "empName": "Stephan",
+            "sal": "2000",
+            "currency": "USD",
+            "smoker":true,
+            "mStat":"Single",
+            "gender":"Male"
+        },
+        {
+            "empid": "1002",
+            "empName": "Frey",
+            "sal": "2100",
+            "currency": "EUR",
+            "smoker":true,
+            "mStat":"Married",
+            "gender":"Male"
+        },
+        {
+            "empid": "1003",
+            "empName": "Bravin",
+            "sal": "2900",
+            "currency": "USD",
+            "smoker":false,
+            "mStat":"Single",
+            "gender":"Male"
+        },
+        {
+            "empid": "1004",
+            "empName": "Regina",
+            "sal": "3000",
+            "currency": "USD",
+            "smoker":false,
+            "mStat":"Married",
+            "gender":"Female"
+        }
+    ]
+}

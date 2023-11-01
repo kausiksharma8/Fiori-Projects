@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script id="sap-ui-bootstrap" 
+    src="https://sdk.openui5.org/resources/sap-ui-core.js" 
+    data-sap-ui-libs="sap.m"
+    data-sap-ui-resourceroots='{"spiderman" : "./"}'
+    data-sap-ui-theme="sap_belize"
+    data-sap-ui-xx-bindingSyntax="complex"
+    >
+    </script>
+    <script>
+        var oView = new sap.ui.view({
+                id:"idDemoView",
+                viewName: "spiderman.view.View1",
+                type:'XML'
+            }) ;
+        oView.placeAt('exact-placeholder');
+    </script>
+</head>
+
+<body>
+    <!--It is a placeholder where content is placed-->
+    <div id="exact-placeholder">
+    </div>
+</body>
+</html>

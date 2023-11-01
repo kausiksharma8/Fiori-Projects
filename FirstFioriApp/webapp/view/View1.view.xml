@@ -1,0 +1,129 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:table="sap.ui.table"
+    controllerName="spiderman.controller.View1"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+>
+    <table:Table rows="{/empTab}" >
+        <table:columns>
+            <table:Column>
+                <table:label>
+                    <Label text="EmpId" />
+                </table:label>
+                <table:template>
+                    <Text text="{empid}" />
+                </table:template>
+            </table:Column>
+            <table:Column>
+                <table:label>
+                    <Label text="Name" />
+                </table:label>
+                <table:template>
+                    <Input value="{empName}"></Input>
+                </table:template>
+            </table:Column>
+            <table:Column>
+                <table:label>
+                    <Label text="Salary" />
+                </table:label>
+                <table:template>
+                    <Text text="{sal}" />
+                </table:template>
+            </table:Column>
+            <table:Column>
+                <table:label>
+                    <Label text="currency" />
+                </table:label>
+                <table:template>
+                    <Text text="{currency}" />
+                </table:template>
+            </table:Column>
+            <table:Column>
+                <table:label>
+                    <Label text="smoker" />
+                </table:label>
+                <table:template>
+                    <CheckBox selected="{smoker}"/>
+                </table:template>
+            </table:Column>
+            <table:Column >
+                <table:label>
+                    <Label text="Maritial Status"></Label>
+                </table:label>
+                <table:template>
+                    <Select selectedKey="{mStat}">
+                        <items>
+                            <core:Item text="Single" key="Single"></core:Item>
+                            <core:Item text="Married" key="Married"></core:Item>
+                        </items>
+                    </Select>
+                </table:template>
+            </table:Column>
+        </table:columns>
+    </table:Table>
+
+    <form:SimpleForm id="__simpleForm">
+        <form:content>
+            <Label
+                text="No:"
+                labelFor="__idNo"
+            />
+            <Input
+                id="__idNo"
+                value="{/empStr/empid}"
+            />
+            <Label
+                text="Name:"
+                labelFor="__idName"
+            />
+            <Input
+                id="__idName"
+                value="{/empStr/empName}"
+            />
+
+            <Label
+                text="Salary"
+                labelFor="__idSal"
+            />
+            <Input
+                id="__idSal"
+                value="{/empStr/sal}"
+            />
+            <Label
+                text="Maritial Status"
+                labelFor="__radio"
+            />
+            <RadioButtonGroup selectedIndex="0" id="__radio">
+                <buttons>
+                    <RadioButton text="Married"></RadioButton>
+                    <RadioButton text="Single"></RadioButton>
+                </buttons>
+            </RadioButtonGroup>
+            <Label
+                text="Currency"
+                labelFor="__idCur"
+            />
+            <Select items = "{/empCurrency}" id="__select" selectedKey = "{/empStr/currency}">
+                <items>
+                    <core:Item text="{currency}" key="{currency}"></core:Item>
+                </items>
+            </Select>
+
+            <!-- <Input
+                id="__idCur"
+                value="{/empStr/currency}"
+            /> -->
+        </form:content>
+    </form:SimpleForm>
+    <Button
+        press="onFlip"
+        text="Flip"
+    />
+    <Button
+        press="onInsert"
+        text="Insert"
+    />
+</mvc:View>
