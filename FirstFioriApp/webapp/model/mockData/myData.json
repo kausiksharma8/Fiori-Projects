@@ -8,6 +8,9 @@
         "mStat":"",
         "gender":""
     },
+    "editable":{
+        "enabled":true
+    },
     "empCurrency":[
         {
             "currency":"USD"

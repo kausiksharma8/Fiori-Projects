@@ -27,30 +27,50 @@ sap.ui.define(
       onInsert: function (oEvent) {
         var aEmpTab = sap.ui.getCore().getModel().getProperty("/empTab");
         var jEmpStr = sap.ui.getCore().getModel().getProperty("/empStr");
-        var body = {
-        "empid": this.getView().byId("__idNo").getValue(),
-        "empName": this.getView().byId("__idName").getValue(),
-        "sal": this.getView().byId("__idSal").getValue(),
-        "currency": this.getView().byId("__idCur").getValue(),
-        }
-
+        // var body = {
+        // "empid": this.getView().byId("__idNo").getValue(),
+        // "empName": this.getView().byId("__idName").getValue(),
+        // "sal": this.getView().byId("__idSal").getValue(),
+        // "currency": this.getView().byId("__idCur").getValue(),
+        // }
+        
 
         //Radio Button Get the Data
         debugger;
         var oRadioGrp = this.getView().byId("__radio")
         var selectedIndex = oRadioGrp.getSelectedIndex();
         var sText = oRadioGrp.getButtons()[selectedIndex].getText()
-        body.mStat = sText
+        
 
         //Select
         var sCurrency = this.getView().byId("__select").getSelectedKey();
         
-        jEmpStr.currency = sCurrency;
-        aEmpTab.push(jEmpStr);
+
+        var body = {
+          "empid": this.getView().byId("__idNo").getValue(),
+          "empName": this.getView().byId("__idName").getValue(),
+          "sal": this.getView().byId("__idSal").getValue(),
+          "currency": sCurrency,
+          "smoker":false,
+          "mStat":sText,
+          "gender":""
+      }
+        aEmpTab.push(body);
 
         sap.ui.getCore().getModel().setProperty("/empTab", aEmpTab);
         debugger;
       },
+      onDisabled: function (oEvent){
+        var oModel = sap.ui.getCore().getModel()
+        var jEditable = oModel.getProperty("/editable")
+        jEditable.enabled = !jEditable.enabled;
+        sap.ui.getCore().getModel().setProperty("/editable",jEditable );
+        if (jEditable.enabled == true)
+          this.getView().byId("__idEditable").setText("Disabled")
+        else
+          this.getView().byId("__idEditable").setText("Enabled")
+        debugger;
+      }
     });
   }
 );
