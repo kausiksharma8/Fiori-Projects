@@ -31,7 +31,7 @@
         {
             "empid": "1001",
             "empName": "Stephan",
-            "sal": "2000",
+            "sal": 2000,
             "currency": "USD",
             "smoker":true,
             "mStat":"Single",
@@ -40,7 +40,7 @@
         {
             "empid": "1002",
             "empName": "Frey",
-            "sal": "2100",
+            "sal": 2100,
             "currency": "EUR",
             "smoker":true,
             "mStat":"Married",
@@ -49,7 +49,7 @@
         {
             "empid": "1003",
             "empName": "Bravin",
-            "sal": "2900",
+            "sal": 2900,
             "currency": "USD",
             "smoker":false,
             "mStat":"Single",
@@ -58,7 +58,7 @@
         {
             "empid": "1004",
             "empName": "Regina",
-            "sal": "3000",
+            "sal": 3000,
             "currency": "USD",
             "smoker":false,
             "mStat":"Married",
