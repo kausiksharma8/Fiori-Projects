@@ -14,7 +14,7 @@
                     <Label text="EmpId" />
                 </table:label>
                 <table:template>
-                    <Text text="{empid}" />
+                    <Text text="{empid}"  />
                 </table:template>
             </table:Column>
             <table:Column>
@@ -22,7 +22,7 @@
                     <Label text="Name" />
                 </table:label>
                 <table:template>
-                    <Input value="{empName}"></Input>
+                    <Input value="{empName}" enabled = "{= ${sal} > 2200 ? false : true }"></Input>
                 </table:template>
             </table:Column>
             <table:Column>
