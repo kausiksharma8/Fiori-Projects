@@ -24,7 +24,11 @@
         
         {
             "currency":"JPY"
+        },
+        {
+            "currency":"INR"
         }
+
         
 ],
     "empTab": [

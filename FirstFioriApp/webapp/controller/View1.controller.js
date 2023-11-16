@@ -70,6 +70,11 @@ sap.ui.define(
         else
           this.getView().byId("__idEditable").setText("Enabled")
         debugger;
+      },
+      onRowSelectionChange: function (oEvent){
+        var sPath = oEvent.getParameters().rowContext.sPath;
+        this.getView().byId("__simpleForm").bindElement(sPath);
+        debugger;
       }
     });
   }

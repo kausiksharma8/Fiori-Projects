@@ -7,7 +7,7 @@
     controllerName="spiderman.controller.View1"
     xmlns:html="http://www.w3.org/1999/xhtml"
 >
-    <table:Table rows="{/empTab}" visibleRowCount="5">
+    <table:Table rows="{/empTab}" visibleRowCount="5" rowSelectionChange="onRowSelectionChange" selectionMode="Single">
         <table:columns>
             <table:Column>
                 <table:label>
@@ -73,7 +73,7 @@
             />
             <Input
                 id="__idNo"
-                value="{/empStr/empid}"
+                value="{empid}"
                 enabled="{/editable/enabled}"
             />
             <Label
@@ -82,7 +82,7 @@
             />
             <Input
                 id="__idName"
-                value="{/empStr/empName}"
+                value="{empName}"
                 enabled="{/editable/enabled}"
                 
             />
@@ -93,14 +93,14 @@
             />
             <Input
                 id="__idSal"
-                value="{/empStr/sal}"
+                value="{sal}"
                 enabled="{/editable/enabled}"
             />
             <Label
                 text="Maritial Status"
                 labelFor="__radio"
             />
-            <RadioButtonGroup selectedIndex="0" id="__radio">
+            <RadioButtonGroup selectedIndex="{= ${mStat} === 'Single' ? 1: 0 }" id="__radio">
                 <buttons>
                     <RadioButton text="Married"></RadioButton>
                     <RadioButton text="Single"></RadioButton>
@@ -110,7 +110,7 @@
                 text="Currency"
                 labelFor="__idCur"
             />
-            <Select items = "{/empCurrency}" id="__select" selectedKey = "{/empStr/currency}">
+            <Select items = "{/empCurrency}" id="__select" selectedKey = "{currency}">
                 <items>
                     <core:Item text="{currency}" key="{currency}"></core:Item>
                 </items>
