@@ -46,7 +46,7 @@
                     <Label text="smoker" />
                 </table:label>
                 <table:template>
-                    <CheckBox selected="{smoker}"/>
+                    <CheckBox selected="{= ${empName} === 'Kausik' ? false : true }"/>
                 </table:template>
             </table:Column>
             <table:Column >
