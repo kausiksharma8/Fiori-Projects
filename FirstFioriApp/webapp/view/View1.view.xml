@@ -7,7 +7,7 @@
     controllerName="spiderman.controller.View1"
     xmlns:html="http://www.w3.org/1999/xhtml"
 >
-    <table:Table rows="{/empTab}" visibleRowCount="5" rowSelectionChange="onRowSelectionChange" selectionMode="Single">
+    <table:Table rows="{/empTab}" visibleRowCount="5" rowSelectionChange="onRowSelectionChange" selectionMode="Single" alternateRowColors ="true">
         <table:columns>
             <table:Column>
                 <table:label>
