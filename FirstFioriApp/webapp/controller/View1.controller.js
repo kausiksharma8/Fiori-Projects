@@ -8,6 +8,10 @@ sap.ui.define(
         var oModelMadhu = Models.createMyModel("model/mockData/myData2.json");
         sap.ui.getCore().setModel(oModelKausik);
         sap.ui.getCore().setModel(oModelMadhu, "alternate");
+
+        // Bind Resource Model
+        var oResourceModel = Models.createResourceModel();
+        sap.ui.getCore().setModel(oResourceModel,"i18n");
       },
       onGenerate: function () {
         //4. bind value in run time
