@@ -24,7 +24,11 @@
         
         {
             "currency":"JPY"
+        },
+        {
+            "currency":"INR"
         }
+
         
 ],
     "empTab": [
@@ -60,6 +64,15 @@
             "empName": "Regina",
             "sal": 3000,
             "currency": "USD",
+            "smoker":false,
+            "mStat":"Married",
+            "gender":"Female"
+        },
+        {
+            "empid": "1004",
+            "empName": "Kausik",
+            "sal": 1000,
+            "currency": "INR",
             "smoker":false,
             "mStat":"Married",
             "gender":"Female"
