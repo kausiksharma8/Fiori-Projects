@@ -30,17 +30,10 @@
                     <Label text="{i18n>XLBL_SALARY}" />
                 </table:label>
                 <table:template>
-                    <Text text="{sal}" />
+                    <Text text="{sal} {currency}" />
                 </table:template>
             </table:Column>
-            <table:Column>
-                <table:label>
-                    <Label text="{i18n>XLBL_CURRENCY}" />
-                </table:label>
-                <table:template>
-                    <Text text="{currency}" />
-                </table:template>
-            </table:Column>
+
             <table:Column>
                 <table:label>
                     <Label text="{i18n>XLBL_SMOKER}" />
