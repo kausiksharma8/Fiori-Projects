@@ -1,8 +1,10 @@
 sap.ui.define(
-  ["sap/ui/core/mvc/Controller", "spiderman/model/models"],
-  function (Controller, Models) {
+  ["sap/ui/core/mvc/Controller", "spiderman/model/models","spiderman/utils/myFormatter"],
+  function (Controller, Models,myFormatter) {
     "use strict";
     return Controller.extend("spiderman.controller.View1", {
+      //Formatter Declaration
+      formatter: myFormatter,
       onInit: function () {
         var oModelKausik = Models.createMyModel("model/mockData/myData.json");
         var oModelMadhu = Models.createMyModel("model/mockData/myData2.json");
