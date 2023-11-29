@@ -22,7 +22,11 @@
                     <Label text="{i18n>XLBL_EMPNAME}" />
                 </table:label>
                 <table:template>
-                    <Input value="{empName}" enabled = "{= ${sal} > 2200 ? false : true }"></Input>
+                    <Input value="{
+                        'path': 'empName',
+                        'formatter':'.formatter.makeNameUpperCase'
+                        }" 
+                    enabled = "{= ${sal} > 2200 ? false : true }"></Input>
                 </table:template>
             </table:Column>
             <table:Column>
@@ -30,23 +34,19 @@
                     <Label text="{i18n>XLBL_SALARY}" />
                 </table:label>
                 <table:template>
-                    <Text text="{sal}" />
+                    <Text text="{
+                        'parts':[ 'sal', 'currency'],
+                        'formatter': '.formatter.convertCurrencyFormatter'
+                    }" />
                 </table:template>
             </table:Column>
-            <table:Column>
-                <table:label>
-                    <Label text="{i18n>XLBL_CURRENCY}" />
-                </table:label>
-                <table:template>
-                    <Text text="{currency}" />
-                </table:template>
-            </table:Column>
+
             <table:Column>
                 <table:label>
                     <Label text="{i18n>XLBL_SMOKER}" />
                 </table:label>
                 <table:template>
-                    <CheckBox selected="{= ${empName} === 'Kausik' ? false : true }"/>
+                    <CheckBox selected="{smoker}"/>
                 </table:template>
             </table:Column>
             <table:Column >
