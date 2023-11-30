@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script id="sap-ui-bootstrap" 
+    src="https://sdk.openui5.org/resources/sap-ui-core.js" 
+    data-sap-ui-libs="sap.m"
+    data-sap-ui-resourceroots='{"fiori.practice" : "./"}'
+    data-sap-ui-theme="sap_belize"
+    data-sap-ui-xx-bindingSyntax="complex"
+    >
+    </script>
+    <script>
+        var oView = new sap.ui.view({
+                id:"idDemoView",
+                viewName: "fiori.practice.view.App",
+                type:'XML'
+            }) ;
+        oView.placeAt('content');
+    </script>
+</head>
+
+<body>
+    <!--It is a placeholder where content is placed-->
+    <div id="content">
+        
+    </div>
+</body>
+</html>
