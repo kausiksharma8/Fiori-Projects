@@ -6,7 +6,7 @@ sap.ui.define([
         onInit: function(){
         },
         onBack:function(){
-            var oApp = this.getAppObject();
+            var oApp = this.getAppObject();//get the parent object
             oApp.to("idView1");
         }
     });
