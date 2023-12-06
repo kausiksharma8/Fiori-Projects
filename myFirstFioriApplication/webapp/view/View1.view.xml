@@ -23,6 +23,7 @@
             <List
                 id="myList"
                 items="{/fruits}"
+                
             >
                 <items>
                     <ObjectListItem
@@ -31,6 +32,8 @@
                         number="{price}"
                         numberUnit="{unit}"
                         icon="{photo}"
+                        type = "Navigation"
+                        press="_onListItemSelection"
                     >
                         <attributes>
                             <ObjectAttribute

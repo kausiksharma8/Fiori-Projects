@@ -1,10 +1,12 @@
 sap.ui.define([
     'fiori/practice/controller/BaseController',
-    
-], function(BaseController) {
+    "fiori/practice/model/models"
+], function(BaseController,Models) {
     'use strict';
     return BaseController.extend("fiori.practice.controller.App",{
         onInit: function(){
+            var oFruitModel = Models.createFruitModel("model/mockData/fruits.json");
+            this.getView().setModel(oFruitModel);
             var oApp = this.getView().byId("myApp");
             var oView1 = new sap.ui.view({
                 id:"idView1",

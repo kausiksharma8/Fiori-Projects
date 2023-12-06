@@ -1,11 +1,14 @@
 sap.ui.define(
-  ["fiori/practice/controller/BaseController", "fiori/practice/model/models","sap/ui/core/Fragment"],
-  function (BaseController, Models,Fragment) {
+  [
+    "fiori/practice/controller/BaseController",
+    "fiori/practice/model/models",
+    "sap/ui/core/Fragment",
+  ],
+  function (BaseController, Models, Fragment) {
     "use strict";
     return BaseController.extend("fiori.practice.controller.View1", {
       onInit: function () {
-        var oFruitModel = Models.createFruitModel("model/mockData/fruits.json");
-        this.getView().setModel(oFruitModel);
+        
       },
       goToView1: function () {
         debugger;
@@ -26,15 +29,101 @@ sap.ui.define(
         );
         var oMainFilter = new sap.ui.model.Filter({
           filters: [oFilter1, oFilter2],
-          and : false
+          and: false,
         });
         var aFilter = [oMainFilter];
-        var oList = this.getView().byId("myList")
+        var oList = this.getView().byId("myList");
         oList.getBinding("items").filter(aFilter);
         debugger;
       },
       _onPressFilter: function (oEvent) {
-        
+        debugger;
+        if (!this._oPopover) {
+          this._oPopover = new sap.ui.xmlfragment("fiori.practice.fragments.filter", this);
+          this.getView().addDependent(this._oPopover);
+          this._oPopover.openBy(oEvent.getSource());
+        }
+        else {
+          this._oPopover.openBy(oEvent.getSource());
+          //this._pPopover=undefined;
+        }
+
+
+      },
+      createObjFilter: function (param) {
+        var value, filterCondition;
+        if (param === "<100") {
+          value = 100;
+          filterCondition = sap.ui.model.FilterOperator.LE;
+        }
+        else if (param === ">100") {
+          value = 100;
+          filterCondition = sap.ui.model.FilterOperator.GE;
+        }
+        else if (param === "<200") {
+          value = 200;
+          filterCondition = sap.ui.model.FilterOperator.LE;
+        }
+        else if (param === ">200") {
+          value = 200;
+          filterCondition = sap.ui.model.FilterOperator.GE;
+        }
+        var oFilter = new sap.ui.model.Filter(
+          "price",
+          filterCondition,
+          value
+        );
+        return oFilter;
+      },
+      _onApply: function (oEvent) {
+        var aFilters = [];
+
+        var aCheckBox = sap.ui.getCore().byId("__filterVBox").getItems()
+        for (let index = 0; index < aCheckBox.length; index++) {
+
+          if (aCheckBox[index].getSelected()) {
+            var sText = aCheckBox[index].getText();
+            aFilters.push(this.createObjFilter(sText));
+          }
+
+        }
+        var oMainFilter = new sap.ui.model.Filter({
+          filters: aFilters,
+          and: true,
+        });
+        var aMainFilter = [oMainFilter];
+        var oList = this.getView().byId("myList");
+        oList.getBinding("items").filter(aMainFilter);
+        debugger;
+        //this._onClose();
+
+      },
+      _onClose: function (oEvent) {
+        debugger;
+        if (this._oPopover) {
+          this._oPopover.close();
+        }
+      },
+      _onListItemSelection:function(oEvent){
+        debugger;
+        // var oItem = oEvent.getParameter("listItem");
+			  // //What is the concept called which gives me address of the element - Context
+			  // var sPath = oItem.getBindingContextPath();
+        // //Get the object of view 2 and bind this address as ABSOLUTE PATH to second view
+        // var oApp = this.getAppObject();
+        // var oView2 = oApp.getPages()[1];
+        // // var oView2 = oApp.getDetailPages()[1];
+        // oView2.bindElement(sPath);
+        // oApp.to("idView2");
+
+
+    
+        var sPath = oEvent.getSource().getBindingContextPath();
+        var oApp = this.getAppObject()
+        var oView2 =oApp.getPage("idView2");
+        oView2.bindElement(sPath);
+        oApp.to("idView2");
+        // 
       }
     });
   }

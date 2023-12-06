@@ -5,7 +5,14 @@
     xmlns:core="sap.ui.core"
     xmlns:html="http://www.w3.org/1999/xhtml"
 >
-<Page title="View 2" showNavButton="true" navButtonPress="onBack">
-    <!-- <Button text="Back" press="onBack"></Button> -->
-</Page>
+    <Page
+        title="View 2"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <!-- <Button text="Back" press="onBack"></Button> -->
+        <content>
+            <Label text="{name}" />
+        </content>
+    </Page>
 </mvc:XMLView>
