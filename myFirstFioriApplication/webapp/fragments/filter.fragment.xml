@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    id="FilterOption"
+    xmlns:table="sap.ui.table"
+>
+    <Popover
+        title="Select Filter"
+        showHeader="true"
+        placement="Left"
+    >
+        <VBox id="__filterVBox">
+            <CheckBox text="&lt;100" />
+            <CheckBox text="&gt;100" />
+            <CheckBox text="&lt;200" />
+            <CheckBox text="&gt;200" />
+        </VBox>
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Apply"
+                    type="Accept"
+                    press="_onApply"
+                />
+                <Button
+                    text="Close"
+                    type="Reject"
+                    press="_onClose"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Popover>
+</core:FragmentDefinition>
