@@ -8,7 +8,7 @@ sap.ui.define([
         onInit: function(){},
         formatter:myFormatter,
         getAppObject: function(){
-            return this.getView().getParent();
+            return this.getView().getParent().getParent(); //view -->master section-->splitApp
         }
     });
     

@@ -18,8 +18,8 @@ sap.ui.define([
                 viewName: "fiori.practice.view.View2",
                 type:'XML'
             }) ;
-            oApp.addPage(oView1);
-            oApp.addPage(oView2);
+            oApp.addMasterPage(oView1);
+            oApp.addDetailPage(oView2);
         }
     });
 });

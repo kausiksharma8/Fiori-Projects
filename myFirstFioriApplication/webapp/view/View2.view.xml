@@ -12,7 +12,28 @@
     >
         <!-- <Button text="Back" press="onBack"></Button> -->
         <content>
-            <Label text="{name}" />
+            <ObjectHeader
+                icon="{photo}"
+                title="{name}"
+                number="{price}"
+                class="sapUiResponsivePadding--header"
+                numberUnit="{unit}"
+            >
+                <statuses>
+                    <ObjectStatus
+                        text="{
+                                'path':'availability',
+                                'formatter':'.formatter.getAvailability'
+                            }"
+                        state="{
+                                'path': 'availability',
+                                'formatter':'.formatter.setState'
+                                }"
+                    />
+                </statuses>
+                <ObjectAttribute text="{benefit}" />
+                <ObjectAttribute text="{type}" />
+            </ObjectHeader>
         </content>
     </Page>
 </mvc:XMLView>

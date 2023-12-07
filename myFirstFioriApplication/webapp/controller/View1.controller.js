@@ -106,21 +106,10 @@ sap.ui.define(
       },
       _onListItemSelection:function(oEvent){
         debugger;
-        // var oItem = oEvent.getParameter("listItem");
-			  // //What is the concept called which gives me address of the element - Context
-			  // var sPath = oItem.getBindingContextPath();
-        // //Get the object of view 2 and bind this address as ABSOLUTE PATH to second view
-        // var oApp = this.getAppObject();
-        // var oView2 = oApp.getPages()[1];
-        // // var oView2 = oApp.getDetailPages()[1];
-        // oView2.bindElement(sPath);
-        // oApp.to("idView2");
-
-
-    
+   
         var sPath = oEvent.getSource().getBindingContextPath();
         var oApp = this.getAppObject()
-        var oView2 =oApp.getPage("idView2");
+        var oView2 =oApp.getDetailPage("idView2");
         oView2.bindElement(sPath);
         oApp.to("idView2");
         // 
