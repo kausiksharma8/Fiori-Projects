@@ -34,6 +34,41 @@
                 <ObjectAttribute text="{benefit}" />
                 <ObjectAttribute text="{type}" />
             </ObjectHeader>
+
+            <IconTabBar class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter
+                        icon="sap-icon://activities"
+                        iconColor="Neutral"
+                        text="More info"
+                    >
+                        
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://supplier"
+                        iconColor="Neutral"
+                        key="supper"
+                        text="Supplier Data"
+                    >
+                        
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://addresses"
+                        iconColor="Neutral"
+                        key="city"
+                        text="City"
+                    />
+                </items>
+            </IconTabBar>
         </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    icon="sap-icon://filter"
+                    type="Emphasized"
+                />
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:XMLView>
