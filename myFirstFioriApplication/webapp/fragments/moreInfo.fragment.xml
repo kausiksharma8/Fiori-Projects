@@ -1,49 +1,35 @@
 <core:FragmentDefinition
-    xmlns:core="sap.ui.core"
-    xmlns="sap.m"
-    xmlns:form="sap.ui.layout.form"
-    xmlns:l="sap.ui.layout"
->
-    <VBox class="sapUiSmallMargin">
-        <form:SimpleForm title="Address" >
-            <form:content>
-                <Label text="Name" />
-                <Input value="" />
-                <Label text="Street/No." />
-                <Input value="" />
-                <Input value="">
-                    <layoutData>
-                        <l:GridData span="XL2 L1 M3 S4" />
-                    </layoutData>
-                </Input>
-                <Label text="ZIP Code/City" />
-                <Input value="">
-                    <layoutData>
-                        <l:GridData span="XL2 L1 M3 S4" />
-                    </layoutData>
-                </Input>
-                <Input value="" />
-                <Label text="Country" />
-                <Select
-    
-                    selectedKey=""
-                >
-                    <items>
-                        <core:Item
-                            text="England"
-                            key="England"
-                        />
-                        <core:Item
-                            text="Germany"
-                            key="Germany"
-                        />
-                        <core:Item
-                            text="USA"
-                            key="USA"
-                        />
-                    </items>
-                </Select>
-            </form:content>
-        </form:SimpleForm>
-    </VBox>
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay354"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Fruit Details"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Availability" />
+				<Text text="{availability}" />
+				<Label text="Color" />
+				<Text text="{color}" />
+				<Label text="Benifit" />
+				<Text text="{benefit}" />
+		
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
 </core:FragmentDefinition>

@@ -31,22 +31,34 @@
                                 }"
                     />
                 </statuses>
-                <ObjectAttribute text="{benefit}" />
-                <ObjectAttribute text="{type}" />
+                <!-- <ObjectAttribute text="{benefit}" />
+                <ObjectAttribute text="{type}" /> -->
             </ObjectHeader>
 
             <IconTabBar class="sapUiResponsiveContentPadding">
                 <items>
                     <IconTabFilter
-                        icon="sap-icon://activities"
-                        iconColor="Neutral"
-                        text="More info"
+                        icon="sap-icon://address-book"
+                        iconColor="Negative"
+                        text="Address Book"
                     >
+                    <core:Fragment
+                            fragmentName="fiori.practice.fragments.addressBook"
+                            type="XML"
+                        />
                         
                     </IconTabFilter>
                     <IconTabFilter
+                        icon="sap-icon://detail-more"
+                        iconColor="Positive"
+                        key="supper"
+                        text="More Info"
+                    >
+                        <core:Fragment fragmentName="fiori.practice.fragments.moreInfo" type="XML"></core:Fragment>
+                    </IconTabFilter>
+                    <IconTabFilter
                         icon="sap-icon://supplier"
-                        iconColor="Neutral"
+                        iconColor="Critical"
                         key="supper"
                         text="Supplier Data"
                     >
