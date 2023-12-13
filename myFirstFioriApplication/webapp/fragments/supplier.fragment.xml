@@ -1,8 +1,4 @@
 <core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
-    <VBox >
-        <form:SimpleForm >
-            <Label text=""></Label>
-        </form:SimpleForm>
-    </VBox>
+    <Table ></Table>
 
 </core:FragmentDefinition>

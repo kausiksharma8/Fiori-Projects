@@ -62,14 +62,16 @@
                         key="supper"
                         text="Supplier Data"
                     >
-                        
+                        <core:Fragment fragmentName="fiori.practice.fragments.supplier" type="XML"></core:Fragment>
                     </IconTabFilter>
                     <IconTabFilter
                         icon="sap-icon://addresses"
                         iconColor="Neutral"
                         key="city"
                         text="City"
-                    />
+                    >
+                        <core:Fragment fragmentName="fiori.practice.fragments.cities" type="XML"></core:Fragment>
+                    </IconTabFilter>
                 </items>
             </IconTabBar>
         </content>
@@ -77,8 +79,14 @@
             <Toolbar>
                 <ToolbarSpacer />
                 <Button
-                    icon="sap-icon://filter"
-                    type="Emphasized"
+                    type="Accept"
+                    text="Approve"
+                    press="__onApprove"
+                />
+                <Button
+                    type="Reject"
+                    text="Reject"
+                    press="__onReject"
                 />
             </Toolbar>
         </footer>
