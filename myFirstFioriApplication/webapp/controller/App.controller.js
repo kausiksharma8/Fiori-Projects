@@ -18,8 +18,15 @@ sap.ui.define([
                 viewName: "fiori.practice.view.View2",
                 type:'XML'
             }) ;
-            oApp.addPage(oView1);
-            oApp.addPage(oView2);
+            var oEmptyView = new sap.ui.view({
+                id:"idEmptyView",
+                viewName: "fiori.practice.view.Empty",
+                type:'XML'
+            }) ;
+            oApp.addMasterPage(oView1);
+            oApp.addDetailPage(oView2);
+            oApp.addDetailPage(oEmptyView);
+            oApp.setInitialDetail(oEmptyView);
         }
     });
 });

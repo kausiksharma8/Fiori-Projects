@@ -5,7 +5,7 @@
     xmlns:core="sap.ui.core"
     xmlns:html="http://www.w3.org/1999/xhtml"
 >
-    <Page title="View 1">
+    <Page title="View 1" showFooter="true" floatingFooter="true" > 
         <headerContent>
             <Button
                 icon="sap-icon://action"

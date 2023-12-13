@@ -8,7 +8,7 @@ sap.ui.define([
         },
         onBack:function(){
             var oApp = this.getAppObject();//get the parent object
-            oApp.to("idView1");
+            oApp.to("idEmptyView");
         }
     });
 });

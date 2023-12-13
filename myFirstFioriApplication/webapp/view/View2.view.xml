@@ -12,7 +12,83 @@
     >
         <!-- <Button text="Back" press="onBack"></Button> -->
         <content>
-            <Label text="{name}" />
+            <ObjectHeader
+                icon="{photo}"
+                title="{name}"
+                number="{price}"
+                class="sapUiResponsivePadding--header"
+                numberUnit="{unit}"
+            >
+                <statuses>
+                    <ObjectStatus
+                        text="{
+                                'path':'availability',
+                                'formatter':'.formatter.getAvailability'
+                            }"
+                        state="{
+                                'path': 'availability',
+                                'formatter':'.formatter.setState'
+                                }"
+                    />
+                </statuses>
+                <!-- <ObjectAttribute text="{benefit}" />
+                <ObjectAttribute text="{type}" /> -->
+            </ObjectHeader>
+
+            <IconTabBar class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter
+                        icon="sap-icon://address-book"
+                        iconColor="Negative"
+                        text="Address Book"
+                    >
+                    <core:Fragment
+                            fragmentName="fiori.practice.fragments.addressBook"
+                            type="XML"
+                        />
+                        
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://detail-more"
+                        iconColor="Positive"
+                        key="supper"
+                        text="More Info"
+                    >
+                        <core:Fragment fragmentName="fiori.practice.fragments.moreInfo" type="XML"></core:Fragment>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://supplier"
+                        iconColor="Critical"
+                        key="supper"
+                        text="Supplier Data"
+                    >
+                        <core:Fragment fragmentName="fiori.practice.fragments.supplier" type="XML"></core:Fragment>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://addresses"
+                        iconColor="Neutral"
+                        key="city"
+                        text="City"
+                    >
+                        <core:Fragment fragmentName="fiori.practice.fragments.cities" type="XML"></core:Fragment>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
         </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    type="Accept"
+                    text="Approve"
+                    press="__onApprove"
+                />
+                <Button
+                    type="Reject"
+                    text="Reject"
+                    press="__onReject"
+                />
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:XMLView>
