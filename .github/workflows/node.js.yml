@@ -1,0 +1,48 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+    - name: CF CLI Action
+      # You may pin to the exact commit or the version.
+      # uses: citizen-of-planet-earth/cf-cli-action@3c7cc1a77152f9157b0c33b32d3b2b5fbdc56dca
+      uses: citizen-of-planet-earth/cf-cli-action@v2
+      with:
+        # Target API Endpoint of Cloud Foundry
+        cf_api: https://api.cf.us10-001.hana.ondemand.com/
+        cf_username: 'kausik.sharma@accenture.com'
+        # Password for API authentication
+        cf_password: 'Kausik@1997'
+        # Target Organization
+        #   cf_org: # optional
+        # # Target Space
+        # cf_space: # optional
+        command: cf push -f ./myFirstFioriApplication/manifest.yml
+        # # Command to run using CF CLI
+      
+          
