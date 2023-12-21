@@ -1,4 +1,32 @@
 <core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
-    <Table ></Table>
+    <Table items="{/suppliers}">
+    <headerToolbar>
+        <OverflowToolbar >
+            <content>
+                <Title text="Suppliers" level="H2"></Title>
+                <ToolbarSpacer ></ToolbarSpacer>
+                <Button icon="sap-icon://add" type="Default" press="onAdd"></Button>
+            </content>
+        </OverflowToolbar>
+    
+    </headerToolbar>
+        <columns>
+            <Column >
+                <Text text="Name"/>
+            </Column>
+            <Column >
+                <Text text="city"/>
+            </Column>
+
+        </columns>
+        <items>
+            <ColumnListItem >
+                <cells>
+                    <Text text="{name}"></Text>
+                    <Input value="{city}"></Input>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
 
 </core:FragmentDefinition>

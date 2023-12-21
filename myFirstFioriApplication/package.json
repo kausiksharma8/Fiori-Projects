@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "nodemon start ."
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,6 @@
     "nodemon": "^3.0.1"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "@sap/ux-ui5-tooling": "^1.12.0"
   }
 }

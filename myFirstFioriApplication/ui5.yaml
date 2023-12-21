@@ -1,0 +1,12 @@
+specVersion: "3.2"
+metadata:
+  name: myfirstfioriapplication
+type: application
+resources:
+  configuration:
+    paths:
+      webapp: webapp
+server:
+  customMiddleware:
+  - name: fiori-tools-appreload
+    afterMiddleware: compression
