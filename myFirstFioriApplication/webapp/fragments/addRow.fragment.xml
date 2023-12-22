@@ -3,15 +3,15 @@
 	xmlns:core="sap.ui.core">
 	<Dialog >
 		<content>
-			<ComboBox></ComboBox>
+			<ComboBox id="addRowComboBox"></ComboBox>
 			
 
 		</content>
 		<beginButton>
-			<Button text="Ok" type="Emphasized"></Button>
+			<Button text="Ok" type="Emphasized" press="onAddRowOk"></Button>
 		</beginButton>
 		<endButton>
-			<Button text="Cancel" ></Button>
+			<Button text="Cancel" press="onAddRowClose"></Button>
 		</endButton>
 	</Dialog>
 </core:FragmentDefinition>

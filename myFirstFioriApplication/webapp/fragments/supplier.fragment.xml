@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
-    <Table items="{/suppliers}">
+    <Table items="{/suppliers}" id="__idSuppliersTable">
     <headerToolbar>
         <OverflowToolbar >
             <content>
@@ -20,7 +20,7 @@
 
         </columns>
         <items>
-            <ColumnListItem >
+            <ColumnListItem id="__tableColList">
                 <cells>
                     <Text text="{name}"></Text>
                     <Input value="{city}"></Input>
