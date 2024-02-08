@@ -36,7 +36,9 @@ sap.ui.define([
         supplierAppendColumn: ['name', 'city'],
         onAdd: function (oEvent) {
             debugger;
+            //Find out all the keys of 'suppliers' in mockdata json
             var aSuppliersKeys = Object.keys(this.getView().getModel().getProperty("/suppliers")[0]);
+            //Popover is opened
             if (!this._oPopover) {
                 this._oPopover = new sap.ui.xmlfragment("fiori.practice.fragments.addRow", this);
                 this.getView().addDependent(this._oPopover);
@@ -44,10 +46,17 @@ sap.ui.define([
 
             //Get the combobox data from addRow.fragment 
             var oAddRowComboBox = sap.ui.getCore().byId("addRowComboBox");
+            //Remove all the existing items and clear the all selection
             oAddRowComboBox.removeAllItems()
             oAddRowComboBox.clearSelection()
+            
+            /* extract those key which are not supplierAppendColun array (it is an 
+                array of keys which are already being used
+                
+                */
             var columnArr = aSuppliersKeys.filter((element) => !this.supplierAppendColumn.includes(element));
 
+            //Add those keys in combobox which is not used as table column
             for (let index = 0; index < columnArr.length; index++) {
                 oAddRowComboBox.addItem(new sap.ui.core.Item({
                     key: columnArr[index],
@@ -60,6 +69,7 @@ sap.ui.define([
         },
         onAddRowOk: function (oEvent) {
             debugger;
+            
             var getSelectedItem = sap.ui.getCore().byId("addRowComboBox").getSelectedItem()
             if (getSelectedItem) {
                 var colName = getSelectedItem.getText()
@@ -84,7 +94,36 @@ sap.ui.define([
                 this._oPopover.close();
 
             }
+        },
+        __onPressListItem:function(oEvent){
+            debugger;
+        },
+        onPressFilterOnSupplierFragment:function (params) {
+            this.oPopUp = new sap.ui.xmlfragment("fiori.practice.fragments.popUp", this);
+            this.getView().addDependent(this.oPopUp);
+            this.oPopUp.bindAggregation("items",{
+                path: "/countries",
+                template: new sap.m.StandardListItem({
+                    title: "{name}",
+                    info: "{code2}"
+                })
+            })
+            this.oPopUp.open()
+        },
+        onValueHelpReqSupplier:function (params) {
+            this.oPopUp = new sap.ui.xmlfragment("fiori.practice.fragments.popUp", this);
+            this.getView().addDependent(this.oPopUp);
+            this.oPopUp.bindAggregation("items",{
+                path: "/cities",
+                template: new sap.m.StandardListItem({
+                    title: "{city}",
+                    info: "{famousFor}",
+                })
+            })
+            this.oPopUp.attachConfirm(this.__onPressListItem,this);
+            this.oPopUp.open()
         }
+
 
     });
 });

@@ -6,6 +6,7 @@
                 <Title text="Suppliers" level="H2"></Title>
                 <ToolbarSpacer ></ToolbarSpacer>
                 <Button icon="sap-icon://add" type="Default" press="onAdd"></Button>
+                <Button icon="sap-icon://filter" type="Emphasized" press="onPressFilterOnSupplierFragment"></Button>
             </content>
         </OverflowToolbar>
     
@@ -23,7 +24,7 @@
             <ColumnListItem id="__tableColList">
                 <cells>
                     <Text text="{name}"></Text>
-                    <Input value="{city}"></Input>
+                    <Input value="{city}" showValueHelp="true" valueHelpRequest="onValueHelpReqSupplier"></Input>
                 </cells>
             </ColumnListItem>
         </items>
